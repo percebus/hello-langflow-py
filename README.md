@@ -15,3 +15,8 @@
 ```bash
 $> uv run poe run
 ```
+
+## References
+
+- [Langflow](https://www.langflow.org/)
+  - [DOCS](https://docs.langflow.org/)
