@@ -1,10 +1,10 @@
 services:
   langflow:
 
-    # image: langflowai/langflow:latest
-    build:
-      context: .
-      # dockerfile: Dockerfile.example
+    image: langflowai/langflow:latest
+    # build:
+    #   context: .
+    #   # dockerfile: Dockerfile.example
 
     command: [
       "langflow", "run",
