@@ -13,7 +13,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
+
+      # uv
       - uses: percebus/github-actions-uv/.github/actions/setup@main
+
+      # requirements.uv.tool.txt
+      - uses: percebus/github-actions-uv/.github/actions/tool_install@main
+
+      # .venv
       - uses: percebus/github-actions-uv/.github/actions/python_install@main
+
+      # requirements.upgrade.txt
+      - uses: percebus/github-actions-pip/.github/actions/install-upgrade@main
+
+      # pyproject.toml
       - uses: percebus/github-actions-uv/.github/actions/sync@main
+
+      # requirements.frozen.txt
       - uses: percebus/github-actions-uv/.github/actions/pip_freeze@main
+
+      - name: poe ci
+        run: uv run poe ci
