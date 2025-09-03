@@ -3,7 +3,6 @@ from typing import Any
 
 import orjson
 from fastapi.encoders import jsonable_encoder
-
 from langflow.base.io.chat import ChatComponent
 from langflow.helpers.data import safe_convert
 from langflow.inputs.inputs import BoolInput, DropdownInput, HandleInput, MessageTextInput
@@ -172,14 +171,8 @@ class ChatOutput(ChatComponent):
         if self.input_value is None:
             msg = "Input data cannot be None"
             raise ValueError(msg)
-        if isinstance(self.input_value, list) and not all(
-            isinstance(item, Message | Data | DataFrame | str) for item in self.input_value
-        ):
-            invalid_types = [
-                type(item).__name__
-                for item in self.input_value
-                if not isinstance(item, Message | Data | DataFrame | str)
-            ]
+        if isinstance(self.input_value, list) and not all(isinstance(item, Message | Data | DataFrame | str) for item in self.input_value):
+            invalid_types = [type(item).__name__ for item in self.input_value if not isinstance(item, Message | Data | DataFrame | str)]
             msg = f"Expected Data or DataFrame or Message or str, got {invalid_types}"
             raise TypeError(msg)
         if not isinstance(

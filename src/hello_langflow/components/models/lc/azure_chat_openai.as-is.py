@@ -1,5 +1,4 @@
 from langchain_openai import AzureChatOpenAI
-
 from langflow.base.models.model import LCModelComponent
 from langflow.field_typing import LanguageModel
 from langflow.field_typing.range_spec import RangeSpec
@@ -45,11 +44,7 @@ class AzureChatOpenAIComponent(LCModelComponent):
             display_name="API Version",
             options=sorted(AZURE_OPENAI_API_VERSIONS, reverse=True),
             value=next(
-                (
-                    version
-                    for version in sorted(AZURE_OPENAI_API_VERSIONS, reverse=True)
-                    if not version.endswith("-preview")
-                ),
+                (version for version in sorted(AZURE_OPENAI_API_VERSIONS, reverse=True) if not version.endswith("-preview")),
                 AZURE_OPENAI_API_VERSIONS[0],
             ),
         ),

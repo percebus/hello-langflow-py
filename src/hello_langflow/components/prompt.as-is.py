@@ -29,19 +29,19 @@ class PromptComponent(Component):
     ]
 
     async def build_prompt(self) -> Message:
-        prompt = Message.from_template(**self._attributes)
-        self.status = prompt.text
+        prompt = Message.from_template(**self._attributes)  # pyright: ignore[reportUnknownMemberType]
+        self.status = prompt.text  # pyright: ignore[reportUnknownMemberType]
         return prompt
 
-    def _update_template(self, frontend_node: dict):
-        prompt_template = frontend_node["template"]["template"]["value"]
-        custom_fields = frontend_node["custom_fields"]
-        frontend_node_template = frontend_node["template"]
+    def _update_template(self, frontend_node: dict):  # type: ignore
+        prompt_template = frontend_node["template"]["template"]["value"]  # pyright: ignore[reportUnknownVariableType]
+        custom_fields = frontend_node["custom_fields"]  # pyright: ignore[reportUnknownVariableType]
+        frontend_node_template = frontend_node["template"]  # pyright: ignore[reportUnknownVariableType]
         _ = process_prompt_template(
-            template=prompt_template,
+            template=prompt_template,  # pyright: ignore[reportUnknownArgumentType]
             name="template",
-            custom_fields=custom_fields,
-            frontend_node_template=frontend_node_template,
+            custom_fields=custom_fields,  # pyright: ignore[reportUnknownArgumentType]
+            frontend_node_template=frontend_node_template,  # pyright: ignore[reportUnknownArgumentType]
         )
         return frontend_node
 
