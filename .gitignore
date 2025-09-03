@@ -1,4 +1,13 @@
 
+# example files
+!example.**
+!**.example
+
+# Ignore only w/ secrets
+!.env
+.env*.local
+env/**/*.sh
+
 # commons/scripts
 repositories/
 _scripts/
@@ -163,12 +172,12 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+# .env
 .envrc
 .venv
-env/
+# env/
 venv/
-ENV/
+# ENV/
 env.bak/
 venv.bak/
 
