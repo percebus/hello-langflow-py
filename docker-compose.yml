@@ -1,0 +1,13 @@
+services:
+  langflow:
+    # image: langflowai/langflow:latest
+
+    build:
+      context: .
+      dockerfile: Dockerfile.example
+
+    ports:
+      - 7860:7860
+    volumes:
+      - ./containers/langflow/app/flows:/app/flows
+      - ./containers/langflow/app/langflow-config-dir:/app/langflow-config-dir
