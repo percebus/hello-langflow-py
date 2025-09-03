@@ -1,7 +1,7 @@
 import os
 
-from dotenv import load_dotenv
 import requests
+from dotenv import load_dotenv
 
 
 def load_dotenv_files() -> None:
@@ -30,16 +30,12 @@ except KeyError:
 url = f"{host}/api/v1/run/{flow_id}"  # The complete API endpoint URL for this flow
 
 # Request payload configuration
-payload = {
-    "output_type": "chat",
-    "input_type": "chat",
-    "input_value": "hello world!"
-}
+payload = {"output_type": "chat", "input_type": "chat", "input_value": "hello world!"}
 
 # Request headers
 headers = {
     "Content-Type": "application/json",
-    "x-api-key": api_key  # Authentication key from environment variable
+    "x-api-key": api_key,  # Authentication key from environment variable
 }
 
 try:
