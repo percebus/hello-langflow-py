@@ -24,15 +24,16 @@ jobs:
       - uses: percebus/github-actions-uv/.github/actions/tool_install@main
 
       # .venv
-      # - uses: percebus/github-actions-uv/.github/actions/python_install@main
-      - name: uv python install ${{ env.PYTHON_VERSION }}
-        run: uv python install ${{ env.PYTHON_VERSION }}
-
-      # requirements.upgrade.txt
-      - uses: percebus/github-actions-pip/.github/actions/install-upgrade@main
+      - name: uv venv
+        run: |
+          uv venv
+          source .venv/bin/activate
 
       # pyproject.toml
       - uses: percebus/github-actions-uv/.github/actions/sync@main
+
+      # requirements.upgrade.txt
+      - uses: percebus/github-actions-pip/.github/actions/install-upgrade@main
 
       # requirements.frozen.txt
       - uses: percebus/github-actions-uv/.github/actions/pip_freeze@main
