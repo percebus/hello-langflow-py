@@ -2,6 +2,16 @@
 
 [![[C]ontinuous [I]ntegration](https://github.com/percebus/hello-langflow-py/actions/workflows/always.yml/badge.svg)](https://github.com/percebus/hello-langflow-py/actions/workflows/always.yml)
 
-[`LICENSE`](./LICENSE.md)
+[`LICENSE`](./LICENSE.md) | [`HISTORY`](./HISTORY.md)
 
-TODO
+## Setup
+
+### Langflow
+
+[Install Langflow](https://docs.langflow.org/get-started-installation)
+
+## Run
+
+```bash
+$> uv run poe run
+```
