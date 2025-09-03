@@ -5,13 +5,13 @@
 
 # Ignore only w/ secrets
 !.env
-.env*.local
-env/**/*.sh
-docker.env
+# .env*.local
+# env/**/*.sh
+# docker.env
 
 # commons/scripts
-repositories/
-_scripts/
+# repositories/
+# _scripts/
 
 
 ##################################
