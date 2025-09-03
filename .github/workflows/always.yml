@@ -34,7 +34,7 @@ jobs:
       - uses: percebus/github-actions-uv/.github/actions/sync@main
 
       # requirements.frozen.txt
-      - uses: percebus/github-actions-uv/.github/actions/pip_freeze@main
+      - uses: percebus/github-actions-pip/.github/actions/freeze@main
 
       - name: poe ci
         run: uv run poe ci
