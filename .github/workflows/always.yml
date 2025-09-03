@@ -9,7 +9,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  default:
+  verify:
+    name: Verify
     runs-on: ubuntu-latest
     steps:
       - uses: percebus/github-actions-common/.github/actions/checkout@main
@@ -20,7 +21,7 @@ jobs:
       # requirements.uv.tool.txt
       - uses: percebus/github-actions-uv/.github/actions/tool_install@main
 
-      # .venv
+      # .venv w/ python
       - name: uv venv
         run: |
           uv venv
