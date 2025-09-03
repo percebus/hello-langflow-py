@@ -1,11 +1,20 @@
 services:
   langflow:
-    # image: langflowai/langflow:latest
 
+    # image: langflowai/langflow:latest
     build:
       context: .
-      dockerfile: Dockerfile.example
+      # dockerfile: Dockerfile.example
 
+    command: [
+      "langflow", "run",
+      # "--backend-only",  # No UI
+      "--host", "0.0.0.0",
+      "--port", "7860"
+    ]
+
+    env_file:
+      - docker.env
     ports:
       - 7860:7860
     volumes:
