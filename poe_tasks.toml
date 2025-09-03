@@ -52,3 +52,7 @@
     [tasks.sync]
     help = "uv sync everything"
     cmd = "uv sync --locked --all-extras"
+
+    [tasks.run]
+    help = "Runs langflow"
+    cmd = "uv run langflow run"

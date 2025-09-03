@@ -2123,6 +2123,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "langflow" },
+    { name = "python-dotenv" },
 ]
 
 [package.dev-dependencies]
@@ -2132,7 +2133,10 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "langflow", specifier = ">=1.5.1,<2.0" }]
+requires-dist = [
+    { name = "langflow", specifier = ">=1.5.1,<2.0" },
+    { name = "python-dotenv", specifier = ">=1.1.1,<2.0" },
+]
 
 [package.metadata.requires-dev]
 dev = [
