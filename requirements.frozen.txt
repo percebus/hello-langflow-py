@@ -99,6 +99,7 @@ frozenlist==1.7.0
 fsspec==2025.3.0
 future==1.0.0
 gassist==0.0.1
+gil==1.25.0.0
 gitdb==4.0.12
 gitpython==3.1.43
 google-ai-generativelanguage==0.6.15
@@ -247,6 +248,7 @@ needle-python==0.6.0
 nest-asyncio==1.6.0
 networkx==3.4.2
 nltk==3.9.1
+nodeenv==1.9.1
 numexpr==2.10.2
 numpy==1.26.4
 oauthlib==3.3.1
@@ -322,6 +324,7 @@ pyperclip==1.9.0
 pypika==0.48.9
 pyproject-hooks==1.2.0
 pyreadline3==3.5.4
+pyright==1.1.404
 pysher==1.0.8
 pytest==8.4.1
 pytest-asyncio==0.26.0
